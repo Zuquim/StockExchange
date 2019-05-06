@@ -1,6 +1,6 @@
 from django.db import models
 
-class Offers(models.Model):
+class Offer(models.Model):
     epoch = models.DecimalField(
         verbose_name='Epoch time',
         name='epoch',
