@@ -1,17 +1,11 @@
 from django.db import models
 
 class Offer(models.Model):
-    epoch = models.DecimalField(
-        verbose_name='Epoch time',
-        name='epoch',
-        primary_key=True,
-        decimal_places=4,
-        max_digits=16,
-        null=False
-    )
     date_time = models.DateTimeField(
         verbose_name='Date and time of publishing',
         name='date time',
+        auto_now_add=True,
+        primary_key=True,
         null=False
     )
     stock = models.CharField(
@@ -29,7 +23,7 @@ class Offer(models.Model):
     value = models.DecimalField(
         verbose_name='Offer value',
         name='value',
-        decimal_places=4,
+        decimal_places=2,
         max_digits=32,
         null=False
     )
