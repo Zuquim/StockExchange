@@ -86,7 +86,8 @@ target/
 *.pyc
 __pycache__/
 local_settings.py
-migrations/*.py
+[0-9]*_initial.py
+[0-9]*_auto_20[12][0-9]*_[0-2][0-9][0-5][0-9].py
 manage.py
 
 .env
