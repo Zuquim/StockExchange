@@ -5,6 +5,8 @@ class Offers(models.Model):
         verbose_name='Epoch time',
         name='epoch',
         primary_key=True,
+        decimal_places=4,
+        max_digits=16,
         null=False
     )
     date_time = models.DateTimeField(
@@ -19,14 +21,16 @@ class Offers(models.Model):
         max_length=8
     )
     operation = models.CharField(
-        verbose_name='Stock codename',
-        name='stock id',
+        verbose_name='Offer operation',
+        name='offer operation',
         null=False,
         max_length=6
     )
     value = models.DecimalField(
         verbose_name='Offer value',
         name='value',
+        decimal_places=4,
+        max_digits=32,
         null=False
     )
     quantity = models.IntegerField(
