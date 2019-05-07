@@ -1,22 +1,30 @@
 from django.db import models
 
 class Offer(models.Model):
-    date_time = models.DateTimeField(
-        verbose_name='Date and time of publishing',
-        name='date time',
-        auto_now_add=True,
+    id = models.IntegerField(
+        verbose_name='Offer id',
+        name='id',
+        auto_created=True,
         primary_key=True,
+        unique=True,
+        serialize=True,
+        null=False
+    )
+    date_time = models.DateTimeField(
+        verbose_name='Date time',
+        name='datetime',
+        auto_now_add=True,
         null=False
     )
     stock = models.CharField(
         verbose_name='Stock codename',
-        name='stock id',
+        name='stock',
         null=False,
         max_length=8
     )
     operation = models.CharField(
         verbose_name='Offer operation',
-        name='offer operation',
+        name='operation',
         null=False,
         max_length=6
     )
@@ -27,13 +35,13 @@ class Offer(models.Model):
         max_digits=32,
         null=False
     )
-    quantity = models.IntegerField(
+    shares = models.IntegerField(
         verbose_name='Number of shares',
         name='shares'
     )
     broker = models.CharField(
-        verbose_name='Broker identification code',
-        name='broker id',
+        verbose_name='Broker id',
+        name='broker',
         null=False,
         max_length=64
     )
