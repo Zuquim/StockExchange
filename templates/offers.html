@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Exchange Offers</title>
+</head>
+<body>
+    <a href="{% url 'index' %}">Stock Exchange Index</a>
+    {% if offer_list %}
+        <ul>
+        {% for offer in offer_list %}
+            <li><a href="/offer_details/{{ offer.id }}">{{ offer.id }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No offers are available.</p>
+    {% endif %}
+</body>
+</html>
