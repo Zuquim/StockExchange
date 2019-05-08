@@ -10,7 +10,7 @@ class Offer(models.Model):
         serialize=True,
         null=False
     )
-    date_time = models.DateTimeField(
+    datetime = models.DateTimeField(
         verbose_name='Date time',
         name='datetime',
         auto_now_add=True,
